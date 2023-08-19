@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreg_1 = [2,11,21,8,5,6,9,8,12,3,5,42];
+        let arreg_2 = [];
+        let j = arreg_1.length;
+        let nro = 0;
+        nro = prompt("Ingrese el Numero que desea Buscar en el Arreglo = ");
+        nro = +nro;
+        for (let i = 0; i < j; i++) {
+            if (nro == arreg_1[i]) {
+                arreg_2.push(i);
+            }
+        }
+        console.log(arreg_1);
+        if ((arreg_2.length)>0) {
+            console.log("Si Existe en el Arreglo el elemento: " + nro);
+            console.log("En las posiciones: " + arreg_2)
+        } else { console.log("No Existe en el Arreglo el elemento: " + nro); }
+        
+    </script>
+</body>
+</html>

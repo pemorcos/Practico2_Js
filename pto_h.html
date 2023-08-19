@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = [2,11,21,8,5,6,42,9,8,12,3,5];
+        let mayor = arreglo;
+        let menor = arreglo;
+        let j = arreglo.length;
+        console.log("Cantidad de elementos del Arreglo: " + j);
+        console.log("Arreglo Original:          " + arreglo);
+
+        let may = 0;
+        let men = 0;
+        let i = 0;
+        let op = prompt("Desea Ordenar el Arreglo de Mayor a Menor y Viceversa? S/N ");
+        if (op.toUpperCase() == "S") {
+            may = mayor[0];
+            men = menor[0];
+            for (let k = 0; k < j; k++) {
+                
+                for (i = 0; i < j-1; i++) {
+                    if ((mayor[i]) < (mayor[i+1])) {
+                        may = mayor[i];
+                        mayor[i] = mayor[i+1];
+                        mayor[i+1] = may;
+                    }
+                }
+            }
+            console.log("Ordenado de Mayor a Menor: " + mayor);
+            for (let k = 0; k < j; k++) {
+                for (i = 0; i < j-1; i++) {
+                        if ((menor[i]) > (menor[i+1])) {
+                                men = menor[i];
+                                menor[i] = menor[i+1];
+                                menor[i+1] = men;
+                        }
+                }
+            }
+            console.log("Ordenado de Menor a Mayor: " + menor);
+        } else {
+            console.log("Arreglo Original: " + arreglo);
+            console.log("Se Perdio la oportunidad de Ordenarlo");
+                }
+ 
+    </script>
+</body>
+</html>

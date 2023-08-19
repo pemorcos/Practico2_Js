@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nro = 0;
+        let pot = 0;
+        let result = 0;
+
+        nro = prompt("Ingrese el Numero que desea Calcular = ");
+        pot = prompt("Ingrese la potencia a la que quiera elevar = ");
+        pot = +pot;
+        if (pot >= 0) {
+            switch (pot) {
+            case 0:
+                result = 0 
+                console.log("El Numero " + nro + " elevado a la potencia " + pot + " es = " + result);
+                
+                break;
+            case 1:
+                result = nro 
+                console.log("El Numero " + nro + " elevado a la potencia " + pot + " es = " + result);
+                break;
+            default:
+                result = nro;
+                for (let i = 2; i <= pot; i++) {
+                    result = result * nro;   
+                }
+                console.log("El Numero " + nro + " elevado a la potencia " + pot + " es = " + result);
+                break;
+            }
+        } else { console.log("La Potencia Ingresada No es Valida")}
+    </script>
+</body>
+</html>

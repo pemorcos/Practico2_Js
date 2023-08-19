@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreg_1 = [2,11,21,24,5,6,9,8,12,3,5,42];
+        let arreg_2 = [];
+        let j = arreg_1.length;
+        let nro = 0;
+        nro = prompt("Ingrese el Numero que desea Multiplicar por el Arreglo = ");
+        nro = +nro;
+        for (let i = 0; i < j; i++) {
+            arreg_2.push(arreg_1[i]*nro);        
+        }
+        console.log(arreg_1);
+        console.log("Multiplicado x " + nro);
+        console.log(arreg_2);
+    </script>
+</body>
+</html>

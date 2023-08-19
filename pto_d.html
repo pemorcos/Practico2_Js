@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = [2,11,21,24,5,6,9,8,12,3,5,42];
+        let arreglo_2 = [];
+        let j = arreglo.length;
+        let ent = 0;
+        for (let i = 0; i < j; i++) {
+            ent = parseInt(arreglo[i]/2)*2
+            if (ent == arreglo[i]) {
+                arreglo_2.push('P');
+            } else { arreglo_2.push('I');
+                }           
+        }
+        console.log(arreglo);
+        console.log(arreglo_2);
+    </script>
+</body>
+</html>

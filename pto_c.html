@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pescas=[];
+        let peso = 0;
+        let op = "S";
+        let i = 0;
+        let nom = "";
+        let pri = 0;
+        let nom_pri = "";
+        let seg = 0;
+        let nom_seg = "";
+        let ter = 0;
+        let nom_ter = "";
+        
+        while (op == "S") {
+            i = i + 1;
+            peso = prompt("Ingrese los Kg del " + i + " Ejemplar ");
+            peso = +peso;
+            pescas.push(peso);
+
+            op = prompt("Desea Continuar la Carga del Siguiente Participante S/N");
+            op = op.toUpperCase();
+            if (op !="S") {
+                if (i<2) {
+                    op = "S"
+                }   
+            }  
+        }
+        console.log(pescas);
+        console.log(i);
+        for (let j = 0; j < pescas.length; j++) {
+            if (pescas[j] > pri ) {
+                ter = seg
+                seg = pri
+                pri = pescas[j];
+                                
+            } else if (pescas[j] > seg ) {
+                    ter = seg;
+                    seg = pescas[j];
+                    
+                } else if(pescas[j] > ter ) {
+                        ter = pescas[j];
+            }
+        }
+        console.log("Primero: " + pri + "  Segundo: " + seg + "  Tercero: " + ter);
+    </script>
+</body>
+</html>

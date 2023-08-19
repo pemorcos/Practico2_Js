@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let notas = [];
+        let nota = 0;
+        let acu = 0;
+        let prome = 0;
+
+        dim = prompt("Ingrese la cantidad (1 a 20) de Alumnos para cargar sus notas: ");
+        if (dim > 0 && dim <= 20) {
+            for (let i = 1; i <= dim; i++) {
+                nota = prompt("Ingrese la Nota del " + i +"° Alumno: ");
+                nota = +nota;
+                if (!Number.isNaN(nota) && nota <=10) {
+                notas.push(nota);
+                } else { 
+                    prompt("La nota ingresada " + nota +" no es correcta, ingrese nuevamente");
+                    i = i - 1
+                }
+            }
+        } else {
+            prompt("La catidad de alumnos " + dim +" no esta permitida");
+        }
+        console.log(notas);
+        notas.forEach((nota) => {
+        acu += nota;
+        });
+        prome = acu/notas.length;
+        console.log("La cantidad de alumnos es: " + (notas.length) + " el Promedio de todos es: " + prome);
+    </script>
+</body>
+</html>

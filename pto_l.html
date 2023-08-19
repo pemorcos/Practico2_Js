@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = [2,11,5,6,42,37,8,23,3,7];
+        let primos= [];
+        let nro = 0;
+        let j = arreglo.length;
+        console.log("Cantidad de elementos del Arreglo: " + j);
+        console.log("Arreglo Original:          " + arreglo);
+
+     
+        let op = prompt("Desea Buscar los Nros. Primos en el Arreglo? S/N ");
+        if (op.toUpperCase() == "S") {
+            let band = 0;
+            let ent = 0;
+            for (let k = 0; k < j; k++) {
+                nro = (arreglo[k]);
+                band = 0;
+                for (let i = 2; i < (nro); i++) {
+                    ent = parseInt(nro / i) * i
+                    if (nro === ent) {
+                        band = 1;
+                    }
+                }
+                if (band == 0) {
+                    primos.push(nro);
+                } else {
+                        console.log("El Numero " + nro + " no es PRIMO");
+                    }
+
+            }
+
+            console.log("Arreglo Original  :" + arreglo);
+            console.log("Primos del Arreglo:" + primos);
+        } else {
+            console.log("Arreglo Original: " + arreglo);
+            console.log("Se Perdio la oportunidad Buscar los PRIMOS");
+            }
+ 
+    </script>
+</body>
+</html>

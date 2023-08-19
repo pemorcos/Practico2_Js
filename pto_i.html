@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = [2,11,5,2,5,6,42,3,8,2,3,5];
+        let repet_nro= [];
+        let repet_cant = [];
+        let j = arreglo.length;
+        console.log("Cantidad de elementos del Arreglo: " + j);
+        console.log("Arreglo Original:          " + arreglo);
+
+        
+        
+        let op = prompt("Desea Buscar la cantidad de Repetidos en el Arreglo? S/N ");
+        if (op.toUpperCase() == "S") {
+            let nro = 0;
+            let cont = 0;
+            let band = 0;
+            let band2 =0;
+            
+            for (let k = 0; k < j; k++) {
+                nro = (arreglo[k]);
+                cont = 1;
+                band = 0;
+                for (let i = 0; i < j; i++) {
+                    if (i != k) {
+                        if (nro == (arreglo[i])) {
+                            cont = cont + 1;
+                            band = 1;
+                        } 
+                    }
+                }
+                if (band == 1) {
+                    band2 = 0
+                    for (let h = 0; h < repet_nro.length; h++) {
+                        if (nro == repet_nro[h]) {
+                            band2 = 1;
+                        }
+                    }
+                    if (band2 == 0) {
+                        repet_cant.push(cont);
+                        repet_nro.push(nro);
+                    }
+                    
+                }
+                
+                
+            }
+            console.log("Nros. que se repiten en el arreglo: " + repet_nro);
+            console.log("Cantidad de veces que aparecen:     " + repet_cant);
+        } else {
+            console.log("Arreglo Original: " + arreglo);
+            console.log("Se Perdio la oportunidad de ver Cantida de Repetidos");
+            }
+ 
+    </script>
+</body>
+</html>

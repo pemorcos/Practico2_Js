@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let elemento=[];
+        let num = 0;
+        let op = "S";
+        let i = 0;
+        let acu = 0;
+
+        while (op == "S") {
+            i = i + 1;
+            num = prompt("Ingrese el Numero de la posición " + i);
+            num = +num;
+            elemento.push(num);
+
+            op = prompt("Desea Continuar la Carga S/N");
+            if (op !="S") {
+                if (i<5) {
+                    op = "S"
+                }   
+            }  
+        }
+        console.log(elemento);
+        console.log(i);
+        for (let j = 0; j < elemento.length; j++) {
+        
+            acu = acu + elemento[j];
+            
+        }
+        console.log(acu);
+
+        
+    </script>
+</body>
+</html>
