@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            
+        let op = prompt("Desea realiar la Serie de Fibonacci hasta un determinado Nro.? S/N ");
+        if (op.toUpperCase() == "S") {
+            let nro = prompt("Ingrese el Nro. hasta el que quiere la Serie: ");
+            let nro1 = 0;
+            let nro2 = 1;
+            let back = 0;
+            let i = 0;
+            for (i = 0; nro2 <= nro; i++) {
+                console.log(nro2);
+                back = nro1 + nro2;
+                nro1= nro2;
+                nro2 = back;
+            }
+
+        } else {
+            console.log("Se Perdio la oportunidad realiar la Serie de Fibonacci");
+            }
+ 
+    </script>
+</body>
+</html>

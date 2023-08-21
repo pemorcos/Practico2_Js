@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let palabra = "";
+        
+        palabra = prompt("Ingrese la Palabra deseada:")
+        let j = palabra.length;
+
+        console.log("Cantidad de silabas de la Palabra: " + j);
+        console.log("Palabra Original:" + palabra);
+
+        let op = prompt("Desea Obtener la cantidad de Vocales de la Palabra? S/N ");
+        if (op.toUpperCase() == "S") {
+            let cont = 0;
+            for (let i = 0; i < j; i++) {
+                console.log(palabra[i])
+                switch (palabra[i].toUpperCase()) {
+                    case "A":
+                    case "E":
+                    case "I":
+                    case "O":
+                    case "U":
+                        cont = cont +1;       
+                        break;
+                
+                    default:
+                        break;
+                }
+
+            }
+            console.log("Cantidad de vocales en la Palabra: " + cont);
+        } else {
+            console.log("Palabra Original: " + arreglo);
+            console.log("Se Perdio la oportunidad de Saber la cantidad de Vocales de la Palabra");
+        }
+
+    </script>
+</body>
+</html>

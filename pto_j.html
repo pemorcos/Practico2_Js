@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = ["Pablo","Morcos","Queso","Salames","Papas Fritas","JavaSript"];
+        let larga = 0;
+        let palabra = "";
+        let j = arreglo.length;
+        let acu = 0;
+        console.log("Cantidad de elementos del Arreglo: " + j);
+        console.log("Arreglo Original:" + arreglo);
+
+        let op = prompt("Desea Obtener la Palabra mas Larga del Arreglo? S/N ");
+        if (op.toUpperCase() == "S") {
+            let element = "";
+            for (let i = 0; i < j; i++) {
+                element = arreglo[i];
+                largoPalabra(arreglo,i);
+                if (acu > larga) {
+                    larga = acu;
+                    palabra = element;
+                }
+            }
+            console.log("Arreglo Original: " + arreglo);
+            console.log("La Palabra mas Larga es: " + palabra);
+        } else {
+            console.log("Arreglo Original: " + arreglo);
+            console.log("Se Perdio la oportunidad de Encontrar la Palabra mas Larga");
+        }
+                
+        function largoPalabra(vect,i) {
+            acu = 0;
+            for (let h = 0; h < vect[i].length; h++) {
+                acu = acu + 1; 
+            }
+
+        }
+        
+
+    </script>
+</body>
+</html>
