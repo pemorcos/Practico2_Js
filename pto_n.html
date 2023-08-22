@@ -7,42 +7,63 @@
 </head>
 <body>
     <script>
-        let arreglo1 = [2,"peras",5,6,"sandia","pinza",8,"madarina",23,"martillo"];
+        let arreglo1 = [2,"peras",5,6,"sandia","pinza",8,"mandarina",23,"martillo"];
         let arreglo2 = ["mandarina","tomate",9,6,"taladro","cereas",2,"martillo",23,7];
         let similar  = [];
+        let opcion = "N";
 
-        
-        
-        console.log("Arreglo Original:          " + arreglo);
+        while (opcion !== "S") {
+            opcion = prompt("Seleccione la operación que desea realizar." + "\n"
+                            + "1 - Mostrar los Arreglos" + "\n"
+                            + "2 - Buscar los elementos IGUALES   en los dos arreglos" + "\n"
+                            + "3 - Buscar los elementos NUMERICOS en los dos arreglos" + "\n"
 
-     
-        let op = prompt("Desea Buscar los Nros. Primos en el Arreglo? S/N ");
-        if (op.toUpperCase() == "S") {
-            let band = 0;
-            let ent = 0;
-            for (let k = 0; k < j; k++) {
-                nro = (arreglo[k]);
-                band = 0;
-                for (let i = 2; i < (nro); i++) {
-                    ent = parseInt(nro / i) * i
-                    if (nro === ent) {
-                        band = 1;
+                            + "S - SALIR");
+
+            switch (opcion.toUpperCase()) {
+                case "1":
+                    console.log(arreglo1);
+                    console.log(arreglo2);
+                break;
+                
+                case "2":
+                    iguales(arreglo1,arreglo2);
+
+                    console.log(arreglo1);
+                    console.log(arreglo2);
+                    console.log("Los elementos iguales de los dos arreglos son:");
+                    console.log(similar);
+                    break;
+                case "3":        
+
+                    break;
+
+                case "S":
+                    let respuesta = prompt("Está seguro que desea finalizar? y/n");
+                    if (respuesta.toUpperCase() === "Y") {
+                    opcion = "S";
+                    } else {opcion="N"}
+                
+                default:
+                    break;
+            }
+        }
+
+
+        function iguales(vect1,vect2) {
+            for (let i = 0; i < vect1.length; i++) {
+                for (let j = 0; j < vect2.length; j++) {
+                    if (vect1[i]==vect2[j]) {
+                        similar.push(vect2[j]);                        
                     }
                 }
-                if (band == 0) {
-                    primos.push(nro);
-                } else {
-                        console.log("El Numero " + nro + " no es PRIMO");
-                    }
+            }   
+        }
 
-            }
-
-            console.log("Arreglo Original  :" + arreglo);
-            console.log("Primos del Arreglo:" + primos);
-        } else {
-            console.log("Arreglo Original: " + arreglo);
-            console.log("Se Perdio la oportunidad Buscar los PRIMOS");
-            }
+        function numericos(vect1,vect2) {
+            
+            
+        }
  
     </script>
 </body>
