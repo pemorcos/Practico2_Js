@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tipo = ["blue_compra","blue_venta","oficial_compra","oficial_venta"];
+        let valor = [+710,+720,+350,+368];
+        let opcion = "N"
+
+        while (opcion !== "S") {
+            opcion = prompt("Seleccione la operación que desea realizar." + "\n"
+                            + "1 - Mostrar las Cotizaciones del Dolar: " + "\n"
+                            + "2 - Modificar las Cotizaciones del Dolar:" + "\n"
+                            + "3 - Comprar Dolares:" + "\n"
+                            + "4 - Vender  Dolares:" + "\n"
+                            + "S - SALIR");
+
+            switch (opcion.toUpperCase()) {
+                case "1":
+                    mostrar(tipo,valor);
+
+                    break;
+                
+                case "2":
+                    modifica(tipo,valor);
+                    mostrar(tipo,valor);
+                    break;
+                case "3": 
+                    compra(tipo,valor);
+
+                    break;
+                case "4": 
+                    venta(tipo,valor);
+
+                    break;
+                case "S":
+                    prompt("Finaliza el Programa");
+                    opcion = "S"
+
+                
+                default:
+                    break;
+            }
+        }
+
+        /*--------FUNCIONES-------*/
+        function mostrar(tp,val) {
+            console.log("COTIZACIONES DEL DOLAR");
+            console.log("**********************");
+            for (let i = 0; i < tp.length; i++) {
+                console.log(tp[i] + " Cotiza a: " + val[i]);
+            }
+        }
+
+        function modifica(tp,val) {
+            for (let i = 0; i < tp.length; i++) {
+                val[i]= prompt("MODIFIQUE LA COTIZACION DEL DOLAR: " + tp[i] + " está a $ " + val[i]);  
+            }
+        }
+        function venta(tp,val) {
+            let op = 0;
+            let cant = 0;
+            op = prompt("Seleccione el Tipo de VENTA a realizar." + "\n"
+                            + "1 - Dolar Blue: " + val[0] +"\n"
+                            + "2 - Dolar Oficial:" + val[2] );
+            cant = prompt("Ingrese la Cantidad de Dolares a VENDER; ");
+            if (op == 1) {
+                tot = cant * val[0];
+                console.log("Cotiación de dolar; " + val[0] + " Total de Dolares: " + cant + "\n"
+                    + " Total a RECIBIR en Pesos por Dolar Blue  " + tot)
+        
+            } else {
+                if (op == 2) {
+                    tot = cant * val[2];
+                    console.log("Cotiación de dolar: " + val[2] + " Total de Dolares: " + cant + "\n"
+                        +" Total a RECIBIR en Pesos por Dolar Oficial  " + tot);
+                } else {
+                    console.log("Opcion Ingrasada Incorrecta"); 
+                }
+                }
+            } 
+
+        function compra(tp,val) {
+            let op = 0;
+            let cant = 0;
+            op = prompt("Seleccione el Tipo de COMPRA a realizar." + "\n"
+                            + "1 - Dolar Blue: " + val[1] +"\n"
+                            + "2 - Dolar Oficial:" + val[3] );
+            cant = prompt("Ingrese la Cantidad de Dolares a COMPRAR; ");
+            if (op == 1) {
+                tot = cant * val[1];
+                console.log("Cotiación de dolar; " + val[1] + " Total de Dolares: " + cant + "\n"
+                    + " Total a Pagar en Pesos por Dolar Blue  " + tot)
+        
+            } else {
+                if (op == 2) {
+                    tot = cant * val[3];
+                    console.log("Cotiación de dolar: " + val[3] + " Total de Dolares: " + cant + "\n"
+                        +" Total a Pagar en Pesos por Dolar Oficial  " + tot);
+                } else {
+                    console.log("Opcion Ingrasada Incorrecta"); 
+                }
+                }
+            }
+        </script>
+</body>
+</html>

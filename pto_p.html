@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = [1,2,3,4,5,6,7,8,9,10,11];
+        let j = arreglo.length;
+
+        console.log("El Arreglo creado es: " + arreglo);
+        console.log("Cantidad de Elementos en el Arreglo: " + j);
+        let op = prompt("Desea Invertir el Orden de Posiciones en el Arreglo? S/N ");
+        if (op.toUpperCase() == "S") {
+            let back = 0;
+            for (let i = 0; i < j; i++) {
+                for (let h = 0; h < j-i-1; h++) {
+                    back=arreglo[h];
+                    arreglo[h]=arreglo[h+1];
+                    arreglo[h+1]=back;
+                }
+            }
+            console.log("El Arreglo Invertido quedó: " + arreglo);
+        } else {
+            console.log("Arreglo Original: " + arreglo);
+            console.log("Se Perdio la oportunidad de Invertir las Posiciones en el Arreglo");
+        }
+    </script>
+</body>
+</html>
