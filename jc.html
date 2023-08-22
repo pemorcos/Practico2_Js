@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cantidadDeAlumnos = parseInt(0) 
+        let calificaciones = []
+        let promedio = 0   
+        cantidadDeAlumnos = prompt(`Cuantos alumnos quiere calificar`)
+        for (let i = 1; i <= cantidadDeAlumnos; i++) {
+        calificaciones.push( parseInt( prompt(`Ingrese la calificacion ${i}° alumno`)))
+        
+        console.log(calificaciones);
+
+        }
+        for (let j = 0; j < calificaciones.length; j++) {
+                            promedio  += calificaciones[j];
+                            
+                        }
+                    
+                        alert(`El promedio total de sus ${cantidadDeAlumnos} alumnos es: ${promedio / cantidadDeAlumnos} `)
+    </script>
+</body>
+</html>
