@@ -8,47 +8,52 @@
 <body>
     <script>
         let arreglo1 = [2,"peras",5,6,"sandia","pinza",8,"mandarina",23,"martillo"];
-        let arreglo2 = ["mandarina","tomate",9,6,"taladro","cereas",2,"martillo",23,7];
+        let arreglo2 = ["mandarina","tomate",9,6,"taladro","peras",2,"martillo",23,7];
         let similar  = [];
         let opcion = "N";
-
+        prompt("Este Punto del Práctico se puede Interpretar de distintas maneras," + "\n" 
+                +"la palabra SIMILAR - Puede tener difenetes significados,"+ "\n"
+                + " aqui les presento algunos de ellos:")
         while (opcion !== "S") {
             opcion = prompt("Seleccione la operación que desea realizar." + "\n"
                             + "1 - Mostrar los Arreglos" + "\n"
-                            + "2 - Buscar los elementos IGUALES       en los dos arreglos" + "\n"
-                            + "3 - Buscar los elementos NUMERICOS     en los dos arreglos" + "\n"
-                            + "4 - Buscar los elementos ALFANUMERICOS en los dos arreglos" + "\n"
+                            + "2 - Buscar los elementos IGUALES               en los dos arreglos" + "\n"
+                            + "3 - Buscar los elementos NUMERICOS             en los dos arreglos" + "\n"
+                            + "4 - Buscar los elementos NUMERICOS IGUALES     en los dos arreglos" + "\n"
+                            + "5 - Buscar los elementos ALFANUMERICOS         en los dos arreglos" + "\n"
+                            + "6 - Buscar los elementos ALFANUMERICOS IGUALES en los dos arreglos" + "\n"
                             + "S - SALIR");
 
             switch (opcion.toUpperCase()) {
                 case "1":
-                    console.log(arreglo1);
-                    console.log(arreglo2);
+                    prompt("1er. Arreglo: " + arreglo1 + "\n" + "2do. Arreglo: " + arreglo2);
+
                 break;
                 
                 case "2":
                     iguales(arreglo1,arreglo2);
 
-                    console.log(arreglo1);
-                    console.log(arreglo2);
-                    console.log("Los elementos iguales de los dos arreglos son:");
-                    console.log(similar);
+                    prompt("Los elementos iguales de los dos arreglos son:" + "\n" + similar);
                     break;
                 case "3": 
                     numericos(arreglo1,arreglo2);
 
-                    console.log(arreglo1);
-                    console.log(arreglo2);
-                    console.log("Los elementos NUMERICOS de los dos arreglos son:");
-                    console.log(similar);
+                    prompt("Los elementos NUMERICOS de los dos arreglos son:"+ "\n" + similar);
                     break;
                 case "4": 
+                    numericosIguales(arreglo1,arreglo2);
+
+                    prompt("Los elementos NUMERICOS IGUALES en los dos arreglos son:"+ "\n" + similar);
+                    break;
+                case "5": 
                     alfas(arreglo1,arreglo2);
 
-                    console.log(arreglo1);
-                    console.log(arreglo2);
-                    console.log("Los elementos ALFANUMERICOS de los dos arreglos son:");
-                    console.log(similar);
+                    prompt("Los elementos ALFANUMERICOS de los dos arreglos son:"+ "\n" + similar);
+                    break;
+                case "6": 
+                    alfasIguales(arreglo1,arreglo2);
+
+                    prompt("Los elementos ALFANUMERICOS IGUALES en los dos arreglos son:"+ "\n" + similar);
                     break;
 
                 case "S":
@@ -64,7 +69,7 @@
 
 
         function iguales(vect1,vect2) {
-            similar = [""];
+            similar = [];
             for (let i = 0; i < vect1.length; i++) {
                 for (let j = 0; j < vect2.length; j++) {
                     if (vect1[i]==vect2[j]) {
@@ -93,11 +98,25 @@
             }
                 
         }   
-            
+
+        function numericosIguales(vect1,vect2) {
+            similar = [];
+            for (let i = 0; i < vect1.length; i++) {
+                n1 = +vect1[i];
+                if (!Number.isNaN(n1)) {
+                    for (let j = 0; j < vect2.length; j++) {
+                        if (vect1[i]==vect2[j]) {
+                            similar.push(vect2[j]);                        
+                        }
+                    }
+                }
+            }   
+        } 
+
         function alfas(vect1,vect2) {
             let n1 = 0;
             let n2 = 0;
-            similar = [""];
+            similar = [];
             for (let i = 0; i < vect1.length; i++) {
                 n1 = +vect1[i];
                 n2 = +vect2[i];
@@ -111,7 +130,23 @@
                     
             }
                 
-        }   
+        }
+        function alfasIguales(vect1,vect2) {
+            similar =[];
+            for (let i = 0; i < vect1.length; i++) {
+                n1 = +vect1[i];
+                if (!Number.isNaN(n1)) {
+                
+                } else {
+                    
+                    for (let j = 0; j < vect2.length; j++) {
+                        if (vect1[i]==vect2[j]) {
+                            similar.push(vect2[j]);                        
+                        }
+                    }
+                }
+            }   
+        }    
     </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arreglo = [];
+        let nro = 0;
+        let op = "S";
+        
+        while (op.toUpperCase() =="S") {
+            let back = 0;
+            op = prompt("Desea Crear el arreglo con la Composicion de un Nro. que deberá ingresar? S/N ");
+            if (op.toUpperCase() === "S") {
+                arreglo = [];
+                nro = prompt("Ingrese el Numero que desea Descomponer de 3 o 4 Digitos: ");
+                nro = +nro;
+                if (nro>=100 && nro <=9999) {
+                    if (nro <1000) {
+                        back = (parseInt(nro/100)) * 100;
+                        arreglo.push(back);
+                        nro = nro - back;
+                        back = (parseInt(nro/10)) * 10;
+                        arreglo.push(back);
+                        back = nro - back;
+                        arreglo.push(back);
+                    } else {
+                        back = (parseInt(nro/1000)) * 1000;
+                        arreglo.push(back);
+                        nro = nro - back;
+                        back = (parseInt(nro/100)) * 100;
+                        arreglo.push(back);
+                        nro = nro - back;
+                        back = (parseInt(nro/10)) * 10;
+                        arreglo.push(back);
+                        back = nro - back;
+                        arreglo.push(back);
+                    }
+                    prompt("Descomposicion del Nro es : " + arreglo)
+
+                } else {prompt("Nro. Ingresado NO VALIDO, vuelva a intentar: ")}
+
+            } else {
+                prompt("Se Perdio la oportunidad de  Crear el arreglo con la Composicion del Nro");
+            }
+
+        }
+    </script>
+</body>
+</html>
