@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let opcion = "N"
+
+        while (opcion !== "S") {
+            opcion = prompt("CONVERSOR DE UNIDADES" + "\n"
+                    + "1 - Grados Farenheit ==> Grados Celsius " + "\n"
+                    + "2 - Milisegundos       ==>  Horas" + "\n"
+
+                    + "S - SALIR");
+
+            switch (opcion.toUpperCase()) {
+                case "1":
+                    let nro_f = 0;
+                    nro_f = prompt("Ingrese el Nro. en Grados Farenheit: ");
+                    console.log("Convertido a Grados Celsius: " + faren_cels(nro_f) + "°C");
+
+                    break;
+                case "2":
+                    let miliseg = 0;
+                    miliseg = prompt("Ingrese el Nro. en Milisegundos: ");
+                    miliseg_horas(miliseg);
+                    
+                    break;
+                case "S":
+                    prompt("Finaliza el Programa");
+                    opcion = "S"
+                    break;
+                default:
+                    break
+                            
+                
+            }
+                
+        }    
+
+        /*--------FUNCIONES-------*/
+        function faren_cels(val) {
+                    let nro_c = 0;
+                    console.log(val + "°F");
+                    nro_c = (val - 32) * 5/9;
+                    return(nro_c);
+
+        }
+        function miliseg_horas(val) {
+                    let horas = 0;
+                    console.log(val + "Milisegundos");
+                    horas = (val / 60000)/60;
+                    console.log("Convertido a:  " + horas + "  Horas");
+        }
+        
+    </script>
+</body>
+</html>

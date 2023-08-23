@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let opcion = "N"
+
+        while (opcion !== "S") {
+            opcion = prompt("CALCULOS GEOMETRICOS" + "\n"
+                    + "1 - Perimetro de un Cuadrado " + "\n"
+                    + "2 - Area de un Triangulo" + "\n"
+
+                    + "S - SALIR");
+
+            switch (opcion.toUpperCase()) {
+                case "1":
+                    let lado = 0;
+                    let per = 0;
+                    lado = prompt("Ingrese el Valor de un Lado del Cuadrado: ");
+                    per = lado * 4;
+                    console.log("Valor del Lado del Cuadrado: " + lado + "\n"
+                                +"Valor del Perimtro del Cuadrado: " + per);
+
+                    break;
+                case "2":
+                    
+                    break;
+                case "S":
+                    prompt("Finaliza el Programa");
+                    opcion = "S"
+                    break;
+                default:
+                    break
+                            
+                
+            }
+                
+        }    
+        
+        /*--------FUNCIONES-------*/
+
+        
+    </script>
+</body>
+</html>    
